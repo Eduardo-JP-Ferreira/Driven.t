@@ -59,7 +59,7 @@ async function createOrUpdateEnrollmentWithAddress(params: CreateOrUpdateEnrollm
   // TODO - Verificar se o CEP é válido antes de associar ao enrollment.
   const result = await request.get(`${process.env.VIA_CEP_API}/${address.cep}/json/`);
 
-  if (!result.data) {
+  if (!result.data || result.data.erro || result.data.status === 400) {
     throw notFoundError();
   }
 
