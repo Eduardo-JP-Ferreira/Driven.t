@@ -36,6 +36,7 @@ export async function getAddressFromCEP(req: AuthenticatedRequest, res: Response
   //Erro 204 OK!!
     if(address.erro === "true") return res.send(httpStatus.NO_CONTENT)
     //status 200
+    
     return res.status(httpStatus.OK).send(address);
 
   } catch (error) {

@@ -21,7 +21,7 @@ async function getAddressFromCEP(cep: string) {
     logradouro: result.data.logadouro,
     complemento: result.data.complemento,
     bairro: result.data.bairro,
-    cidade: result.data.cidade,
+    cidade: result.data.localidade,
     uf: result.data.uf
   }
   // FIXME: não estamos interessados em todos os campos
