@@ -15,7 +15,7 @@ async function getAddressFromCEP(cep: string) {
   if (!result.data) {
     throw notFoundError();
   }
-  if (result.data.erro == true) return result.data
+  if (result.data.erro === true) return result.data
   
   const response: Omit<ViaCEPAddress, 'localidade'> & { cidade: string } = {
     logradouro: result.data.logadouro,
